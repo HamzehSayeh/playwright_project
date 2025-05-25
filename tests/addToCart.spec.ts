@@ -2,15 +2,9 @@ import { test, expect } from '@playwright/test';
 import { LoginPage } from '../pages/LoginPage';
 
 test.describe('Add To Cart Using Standard Username', () => {
-    test.beforeEach(async ({ page }) => {
-        const loginPage = new LoginPage(page);
-        await loginPage.goto();
-        await page.waitForTimeout(3000);
-        await loginPage.login(process.env.STANDARD_USERNAME!, process.env.PASSWORD!);
-
-        await page.waitForTimeout(3000);
-        await expect(page.url()).toBe('https://www.saucedemo.com/inventory.html');
-    });
+   test.beforeEach(async ({ page }) => {
+    await page.goto("https://www.saucedemo.com/inventory.html");
+  });
     test('should add an item to the cart', async ({ page }) => {
         await page.click('[data-test="add-to-cart-sauce-labs-fleece-jacket"]');
         await page.waitForTimeout(2000);
