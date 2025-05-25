@@ -1,5 +1,5 @@
 import { defineConfig, devices } from "@playwright/test";
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 dotenv.config();
 
 /**
@@ -62,10 +62,10 @@ export default defineConfig({
     // },
 
     /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
+    {
+      name: "Microsoft Edge",
+      use: { ...devices["Desktop Edge"], channel: "msedge" },
+    },
     // {
     //   name: 'Google Chrome',
     //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
