@@ -3,9 +3,7 @@ import { LoginPage } from "../pages/LoginPage";
 
 test.describe("sort feature for standard user", async () => {
   test.beforeEach(async ({ page }) => {
-    const login = new LoginPage(page);
-    await login.goto();
-    await login.login(process.env.STANDARD_USERNAME!, process.env.PASSWORD!);
+    await page.goto("https://www.saucedemo.com/inventory.html");
   });
 
   test("Sort from Name (A to Z)", async ({ page }) => {

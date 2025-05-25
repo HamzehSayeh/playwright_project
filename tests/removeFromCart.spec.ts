@@ -3,14 +3,8 @@ import { LoginPage } from '../pages/LoginPage';
 
 test.describe('Add Then Remove From Cart Using Standard Username', () => {
     test.beforeEach(async ({ page }) => {
-        const loginPage = new LoginPage(page);
-        await loginPage.goto();
-        await page.waitForTimeout(3000);
-        await loginPage.login(process.env.STANDARD_USERNAME!, process.env.PASSWORD!);
-
-        await page.waitForTimeout(3000);
-        await expect(page.url()).toBe('https://www.saucedemo.com/inventory.html');
-    });
+    await page.goto("https://www.saucedemo.com/inventory.html");
+  });
     test('should add an item to the cart and remove it', async ({ page }) => {
         await page.click('[data-test="add-to-cart-sauce-labs-fleece-jacket"]');
         await page.waitForTimeout(2000);
